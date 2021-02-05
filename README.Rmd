@@ -5,6 +5,9 @@ date: Feb 3, 2021
 output: github_document
 ---
 ```{r}
+# repo link
+# https://github.com/ruonanjj/stat433_hw1_websraping
+
 # read html
 library(rvest)
 library(xml2)
@@ -26,7 +29,7 @@ position = c()
 department = c()
 degree = c()
 
-# loop through data to add into df
+# loop through the data to add into df
 for(i in 1:length(w1)){
     x = unlist(strsplit(w1[i], split = "<br>"))
     name[i] = x[1]
@@ -40,4 +43,5 @@ df = data.frame(Name=name,
                  Position=position, 
                  Department=department, 
                  Degree_Information=degree)
+head(df)
 ```
